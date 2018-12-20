@@ -7,7 +7,7 @@ import scala.io.Source
 
 object PrimeSum extends App {
 
-  val primes = Source.fromInputStream(getClass.getResourceAsStream("/primes.txt")).getLines().flatMap(_.split(',')).map(_.toInt).toList
+  val primes = Source.fromInputStream(getClass.getResourceAsStream("/primes.txt")).getLines().flatMap(_.split(',')).map(_.trim.toInt).toList
 
   val writer1 = new PrintWriter("./summary.txt")
   val writer2 = new PrintWriter("./details.txt")
